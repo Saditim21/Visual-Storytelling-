@@ -1,8 +1,14 @@
+import { useRef } from "react";
 import {pages} from "./UI";
 
 const Page = ({number, front, back, ...props}) => {
+    const group = useRef();
     return (
-        <group>
+        <group {...prosps} ref={group}>
+            <mesh scale={0.1}>
+                <boxGeometry/>
+                <meshBasicMaterial color="red" /> 
+            </mesh>
             
         </group>
     )
