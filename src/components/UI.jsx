@@ -20,6 +20,17 @@ const pictures = [
   "DSC02069",
 ];
 
+const timeline = [
+  "1970",
+  "1980",
+  "1990",
+  "2000",
+  "2010",
+  "MOBILE",
+  "2020",
+  "PRESENT",
+]
+
 export const pageAtom = atom(0);
 export const pages = [
   {
@@ -46,7 +57,7 @@ export const UI = () => {
     const audio = new Audio("/audios/page-flip-01a.mp3");
     audio.play();
   }, [page]);
-
+console.log(pages)
   return (
     <>
       <main className=" pointer-events-none select-none z-10 fixed  inset-0  flex justify-between flex-col">
@@ -68,7 +79,8 @@ export const UI = () => {
                 }`}
                 onClick={() => setPage(index)}
               >
-                {index === 0 ? "Cover" : `Page ${index}`}
+                {index === 0 ? "Cover" : ` ${timeline[index-1]}`}
+                
               </button>
             ))}
             <button
